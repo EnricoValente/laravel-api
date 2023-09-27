@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
- Route::resource('projects', ProjectController::class)->only([
-    'index',
-    'projects'
- ]);
+ Route::get('/projects', [ProjectController::class, 'index']);
+ Route::get('/projects/{$project}', [ProjectController::class, 'show']);
+  
