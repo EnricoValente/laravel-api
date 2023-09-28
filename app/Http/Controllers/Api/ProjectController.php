@@ -13,7 +13,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects= Project::with('type', 'technology')->paginate(4);
+        $projects= Project::all();
 
         return response()->json([
             'projects'=> $projects
@@ -41,7 +41,11 @@ class ProjectController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $project=Project::findOrFail($id);
+
+        return response()->json([
+            'project'=>$project
+        ]);
     }
 
     /**
@@ -49,7 +53,7 @@ class ProjectController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
     }
 
     /**
