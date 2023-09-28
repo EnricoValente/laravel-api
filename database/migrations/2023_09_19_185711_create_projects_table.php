@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('type_id')->nullable();
             $table->string('title', 70);
             $table->text('description');
             $table->date('start_date');
