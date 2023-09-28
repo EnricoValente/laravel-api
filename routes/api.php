@@ -22,5 +22,5 @@ use Illuminate\Support\Facades\Route;
 //  Route::get('/projects', [ProjectController::class, 'index']);
 //  Route::get('/projects/{$project}', [ProjectController::class, 'show']);
 
-Route::resource('projects', ProjectController::class);
+Route::resource('projects', ProjectController::class)->only(['index', 'show']);
   
